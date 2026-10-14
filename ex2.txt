@@ -1,0 +1,20 @@
+
+PHẦN 1. PHÂN TÍCH LỖI CÚ PHÁP TRONG ĐOẠN MÃ
+Đoạn mã gốc của sinh viên gặp các lỗi chính sau:
+1. Lỗi khoảng trắng khi chèn ảnh ([Logo PTIT] (https://ptit.edu.vn/logo.png)):
+- Nguyên nhân: Có khoảng trắng thừa nằm giữa dấu đóng ngoặc vuông `]` và dấu mở ngoặc tròn `(`. 
+- Hậu quả: Markdown Parser không nhận diện được đây là cú pháp chèn ảnh, dẫn đến việc ảnh không hiển thị mà chỉ hiện dưới dạng văn bản thông thường.
+2. Lỗi nhảy cóc cấp độ tiêu đề Heading (# Tiêu đề 1 nhảy thẳng xuống ### Giới thiệu dự án):
+- Nguyên nhân: Sử dụng tiêu đề cấp 1 (#) rồi nhảy cóc ngay sang tiêu đề cấp 3 (###) mà bỏ qua cấp 2 (##).
+- Hậu quả: Vi phạm nguyên tắc phân cấp tài liệu kỹ thuật, làm cấu trúc HTML rendered bị đứt gãy, gây khó khăn cho việc lập mục lục tự động.
+3. Lỗi định dạng văn bản in đậm chưa chuẩn:
+- Nguyên nhân: Đoạn văn bản mô tả (Đây là đoạn văn bản in đậm.) không được bọc bởi các ký hiệu `**` hoặc `__`.
+- Hậu quả: Văn bản hiển thị dạng chữ thường thuần túy, không được định dạng đậm theo yêu cầu.
+PHẦN 2. HOÀN THIỆN ĐOẠN MÃ MARKDOWN CHUẨN
+Tiêu đề chính của tài liệu
+Giới thiệu dự án
+![Logo PTIT](https://ptit.edu.vn/logo.png)
+**Đây là đoạn văn bản in đậm.**
+## Mục tiêu
+* Quản lý sinh viên
+* Quản lý môn học
